@@ -13,22 +13,24 @@ export default class Kartya {
         this.#index = index;
         this.#elem = elem;
         this.megjelenit()
-        this.kattintas = $(".valami:last-child")
+        this.kattintas = $(".kivalaszt:last-child")
         this.#kattintas
 
     }
 
     megjelenit() {
-        `<div>
-            <div class = "valami card-body">
-                <p>${this.#elem}</p>
+        this.#szuloElem.append(`
+            <div class = "card kivalaszt col-lg-3 col-md-4 col-sm-6">
+                <div class = "card-body">
+                    <img src = "${this.#elem}" alt = "" class = "w-100">
+                </div>
             </div>
-        </div>`
+        `)
     }
 
     kattintas() {
         this.#kattintas.on("click", () => {
-            const e = new CustomEvent("katt", {detail:this.#index})
+            const e = new CustomEvent("tartalom", {detail:this.#index})
             window.dispatchEvent(e)
         })
     }
