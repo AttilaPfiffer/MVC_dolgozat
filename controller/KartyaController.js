@@ -4,16 +4,17 @@ import Kartyak from "../view/Kartyak.js";
 export default class KartyaController {
     #szuloElem;
     #model;
+    #view;
     constructor() {
         this.#szuloElem = $(".tartalom")
         this.#model = new KartyaModell();
-        new Kartyak(this.#model.getLista(), this.#szuloElem)
+        this.#view = new Kartyak(this.#model.getLista(), this.#szuloElem)
         this.esemenyKezelo()
         
     }
 
     esemenyKezelo() {
-        $(window).on("katt", (event) => {
+        $(window).on("tartalom", (event) => {
             this.#model(event.detail)
             new Kartyak(this.#model.getLista(), this.#szuloElem)
         })

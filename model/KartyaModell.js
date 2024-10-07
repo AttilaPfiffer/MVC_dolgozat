@@ -26,9 +26,7 @@ export default class KartyaModell {
             "Ne feledd: a legnehezebb utakon járva találjuk meg a legszebb kilátásokat."
         ]
         this.#db = 0;
-        this.getLista()
-        this.getDb()
-        this.dbNoveles()
+        
         
     }
 
@@ -42,6 +40,7 @@ export default class KartyaModell {
 
     dbNoveles() {
         this.#db ++
+        return this.#db
     }
 
 

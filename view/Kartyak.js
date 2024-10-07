@@ -21,7 +21,11 @@ export default class Kartyak {
         })
     }
 
-    setDb() {
+    getDb() {
         return this.#db
+    }
+    
+    setDb(ertek) {
+        this.#db = ertek
     }
 }

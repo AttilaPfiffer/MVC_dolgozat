@@ -5,7 +5,7 @@ export default class Kartya {
     #szuloElem;
     #elem;
     #index;
-    #kattintas;
+    #kattintasElem;
     
 
     constructor(elem, szuloElem, index) {
@@ -13,8 +13,8 @@ export default class Kartya {
         this.#index = index;
         this.#elem = elem;
         this.megjelenit()
-        this.kattintas = $(".kivalaszt:last-child")
-        this.#kattintas
+        this.kattintasELem = $(".kivalaszt:last-child")
+        this.kattintas();
 
     }
 
@@ -29,7 +29,7 @@ export default class Kartya {
     }
 
     kattintas() {
-        this.#kattintas.on("click", () => {
+        this.#kattintasElem.on("click", () => {
             const e = new CustomEvent("tartalom", {detail:this.#index})
             window.dispatchEvent(e)
         })
